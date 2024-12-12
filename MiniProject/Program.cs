@@ -29,11 +29,11 @@ class Program
                     StartQuiz();
                     break;
                 case "3":
-                    Console.WriteLine("\nThank you for using the Quiz Application. See you soon.");
+                    Console.WriteLine("\n--------------Thank you for using the Quiz Application.--------------");
                     Environment.Exit(0);
-                    break;
+                    return;
                 default:
-                    Console.WriteLine("Error, invalid choice. Choose from the option");
+                    Console.WriteLine("Error, invalid choice. Choose from the option\n");
                     break;
             }
         }    
@@ -45,19 +45,18 @@ static void ShowMenu(){
         Console.WriteLine("2. Enter the quiz.");
         Console.WriteLine("3. Exit the application\n");
         Console.Write("Enter your choice: ");
-        //Console.WriteLine("Total number of questions: 10\n");
-        //Console.WriteLine("Goodluck!\n");
     }
 
 static void AddQuestion(){
     Console.Write("Enter a question: ");
-    string questionText=Console.ReadLine();
+    string? questionText=Console.ReadLine();
 
     Console.Write("Enter the answer: ");
-    string answerText=Console.ReadLine();
+    string? answerText=Console.ReadLine();
 
     if(string.IsNullOrEmpty(questionText) || string.IsNullOrEmpty(answerText)){
-        Console.WriteLine("Question or answer cannot be empty.");
+        Console.WriteLine("\nQuestion or answer cannot be empty.\n");
+        return;
     }
 
     quiz.Add(new Question(questionText,answerText));
@@ -76,15 +75,15 @@ static void StartQuiz(){
             score++;
             Console.WriteLine("\nCorrect\n");
         }else{
-            Console.WriteLine($"\nIncorrect, the correcr answer is {question.Answer}\n");
+            Console.WriteLine($"\nIncorrect, the correct answer is {question.Answer}\n");
         }
     }
-    Console.WriteLine($"\nYour total score is {score}/{quiz.Count}");
+    Console.WriteLine($"\nYour total score is {score}/{quiz.Count}\n");
     }
 }
 class Question{
-    public string Text{get; set;}
-    public string Answer{get; set;}
+    public string? Text{get; set;}
+    public string? Answer{get; set;}
 
     public Question(string text, string answer){
         Text=text;
