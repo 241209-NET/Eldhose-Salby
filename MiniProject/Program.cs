@@ -8,7 +8,7 @@ class Program
     static int score=0;
     static void Main(string[] args)
     {
-        Console.WriteLine("--------------Welcome to the Quiz Application--------------\n");
+        Console.WriteLine("\n--------------Welcome to the Quiz Application--------------\n");
         Console.WriteLine("Menu");
 
         quiz.Add(new Question("1) Name the process of hiding unnecessary details and showing only what is necessary.", "Abstraction"));
@@ -60,7 +60,7 @@ static void AddQuestion(){
     }
 
     quiz.Add(new Question(questionText,answerText));
-        Console.WriteLine("Question and answer added successfully.");
+        Console.WriteLine("\nQuestion and answer added successfully.\n");
     
 
 }
