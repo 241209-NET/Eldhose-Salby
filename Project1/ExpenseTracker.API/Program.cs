@@ -1,3 +1,9 @@
+using ExpenseTracker.API.Data;
+using ExpenseTracker.API.Repository;
+using ExpenseTracker.API.Service;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +11,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Add dbcontect with connection string
+builder.Services.AddDbContext<ExpenseTrackerContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("ExpenseTracker")));
+
+//Add service dependencies
+builder.Services.AddScoped<IUserService, UserService>();
+
+//Add repository dependencies
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+//Add controllers
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -15,4 +37,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//Map controllers
+app.MapControllers();
 app.Run();
