@@ -2,7 +2,7 @@ namespace ExpenseTracker.API.Model;
 
 public class Expense 
 {
-    public int ID { get; set;}
+    public int Id { get; set;}
     public decimal Amount { get; set;}
     public int UserId { get; set;}
     public int CategoryId { get; set;}
