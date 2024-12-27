@@ -10,12 +10,12 @@ public class UserService : IUserService
 
     public User CreateUser(User newUser)
     {
-        throw new NotImplementedException();
+        return _userRepository.CreateUser(newUser);
     }
 
     public IEnumerable<User> GetAllUsers()
     {
-        throw new NotImplementedException();
+        return _userRepository.GetAllUsers();
     }
 
     public User? GetUserById(int UserId)

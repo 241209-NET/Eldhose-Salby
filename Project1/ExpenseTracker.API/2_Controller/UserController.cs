@@ -1,5 +1,3 @@
-using System.IO.Pipelines;
-using System.Security.Cryptography.X509Certificates;
 using ExpenseTracker.API.Model;
 using ExpenseTracker.API.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +21,8 @@ public class UserController:ControllerBase
     [HttpPost]
     public IActionResult CreateUser(User newUser)
     {
-        return Ok();
+        var user= _userService.CreateUser(newUser);
+        return Ok(user);
     }
 
     [HttpDelete]

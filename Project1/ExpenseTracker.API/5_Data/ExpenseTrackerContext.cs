@@ -7,5 +7,5 @@ public partial class ExpenseTrackerContext:DbContext
 {
     public ExpenseTrackerContext(){}
     public ExpenseTrackerContext(DbContextOptions<ExpenseTrackerContext> options) : base(options){}
-    public DbSet<User>Users{get; set;}
+    public virtual DbSet<User>Users{get; set;}
 }

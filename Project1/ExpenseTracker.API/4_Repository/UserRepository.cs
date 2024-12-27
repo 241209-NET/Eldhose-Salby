@@ -10,12 +10,15 @@ public class UserRepository : IUserRepository
 
     public User CreateUser(User newUser)
     {
-        throw new NotImplementedException();
+        //Insert into Users values(newUser)
+        _expenseTrackerContext.Users.Add(newUser);
+        _expenseTrackerContext.SaveChanges();
+        return newUser;
     }
 
     public IEnumerable<User> GetAllUsers()
     {
-        throw new NotImplementedException();
+        return _expenseTrackerContext.Users.ToList();
     }
 
     public User? GetUserById(int UserId)
