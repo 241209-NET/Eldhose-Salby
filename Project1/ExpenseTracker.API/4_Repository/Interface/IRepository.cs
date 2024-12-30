@@ -12,7 +12,7 @@ public interface IUserRepository
 
 public interface IExpenseRepository
 {
-
+    IEnumerable<Expense>GetAllExpenses();
 }
 
 public interface ICategoryRepository

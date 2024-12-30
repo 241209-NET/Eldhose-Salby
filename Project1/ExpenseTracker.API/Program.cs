@@ -17,9 +17,11 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("ExpenseTracker")
 
 //Add service dependencies
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IExpenseService, ExpenseService>();
 
 //Add repository dependencies
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
 
 //Add controllers
 builder.Services.AddControllers()

@@ -12,9 +12,9 @@ public interface IUserService
 
 public interface IExpenseService
 {
-    
-    
+    IEnumerable<Expense>GetAllExpenses();
 }
+
 
 public interface ICategoryService
 {

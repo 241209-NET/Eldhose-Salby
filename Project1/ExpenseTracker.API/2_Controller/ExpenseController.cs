@@ -11,5 +11,12 @@ public class ExpenseController : ControllerBase
     private readonly IExpenseService _expenseService;
     public ExpenseController(IExpenseService expenseService) => _expenseService = expenseService;
 
+    [HttpGet]
+    public IActionResult GetAllExpenses()
+    {
+        var expenseList = _expenseService.GetAllExpenses();
+        return Ok(expenseList);
+    }
+
     
 }
