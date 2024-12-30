@@ -8,11 +8,16 @@ public interface IUserService
     IEnumerable<User> GetAllUsers();
     User? GetUserById(int id);
     User? DeleteUserById(int id);
-    
-    
 }
 
 public interface IExpenseService
 {
+    
+    
+}
+
+public interface ICategoryService
+{
+
 
 }

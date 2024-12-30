@@ -10,7 +10,12 @@ public interface IUserRepository
     User? GetUserById(int id);
 }
 
-public interface IExpenseService
+public interface IExpenseRepository
 {
 
+}
+
+public interface ICategoryRepository
+{
+    
 }
