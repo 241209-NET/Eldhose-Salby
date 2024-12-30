@@ -6,7 +6,8 @@ public interface IUserService
 {
     User CreateUser(User newUser);
     IEnumerable<User> GetAllUsers();
-    User? GetUserById(int UserId);
+    User? GetUserById(int id);
+    User? DeleteUserById(int id);
     
     
 }

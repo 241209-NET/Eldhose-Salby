@@ -21,8 +21,15 @@ public class UserRepository : IUserRepository
         return _expenseTrackerContext.Users.ToList();
     }
 
-    public User? GetUserById(int UserId)
+    public User? GetUserById(int id)
     {
-        throw new NotImplementedException();
+        return _expenseTrackerContext.Users.Find(id);
+    }
+
+    public void DeleteUserById(int id)
+    {
+        var user = GetUserById(id);
+        _expenseTrackerContext.Users.Remove(user!);
+        _expenseTrackerContext.SaveChanges();
     }
 }

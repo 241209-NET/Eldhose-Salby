@@ -18,6 +18,14 @@ public class UserController:ControllerBase
         return Ok(userList);
     }
 
+    [HttpGet("{id}")]
+    public IActionResult GetUserById(int id)
+    {
+        var findUser = _userService.GetUserById(id);
+        if (findUser is null) return NotFound();
+        return Ok(findUser);
+    }
+
     [HttpPost]
     public IActionResult CreateUser(User newUser)
     {
@@ -26,8 +34,10 @@ public class UserController:ControllerBase
     }
 
     [HttpDelete]
-    public IActionResult DeleteUser(string Name)
+    public IActionResult DeleteUserById(int id)
     {
-        return Ok();
+        var deleteUser = _userService.DeleteUserById(id);
+        if (deleteUser is null) return NotFound();
+        return Ok(deleteUser);
     }
 }

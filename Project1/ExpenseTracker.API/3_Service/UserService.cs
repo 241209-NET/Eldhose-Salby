@@ -18,8 +18,16 @@ public class UserService : IUserService
         return _userRepository.GetAllUsers();
     }
 
-    public User? GetUserById(int UserId)
+    public User? GetUserById(int id)
     {
-        throw new NotImplementedException();
+        if(id < 1) return null;
+        return _userRepository.GetUserById(id);
+    }
+
+    public User? DeleteUserById(int id)
+    {
+        var user = GetUserById(id);
+        if(user is not null) _userRepository.DeleteUserById(id);
+        return user;
     }
 }
