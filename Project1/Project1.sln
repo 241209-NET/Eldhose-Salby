@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project1.API", "ExpenseTracker.API\Project1.API.csproj", "{4641D3E4-5C1B-4405-BCBE-49C49E37E99D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.TEST", "ExpenseTracker.TEST\ExpenseTracker.TEST.csproj", "{B25EBE6B-E993-40DE-938A-97CFC4C2D1B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4641D3E4-5C1B-4405-BCBE-49C49E37E99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4641D3E4-5C1B-4405-BCBE-49C49E37E99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4641D3E4-5C1B-4405-BCBE-49C49E37E99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4641D3E4-5C1B-4405-BCBE-49C49E37E99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25EBE6B-E993-40DE-938A-97CFC4C2D1B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25EBE6B-E993-40DE-938A-97CFC4C2D1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25EBE6B-E993-40DE-938A-97CFC4C2D1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25EBE6B-E993-40DE-938A-97CFC4C2D1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
