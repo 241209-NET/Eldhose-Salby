@@ -11,4 +11,11 @@ public class CategoryController : ControllerBase
     private readonly ICategoryService _categoryService;
     public CategoryController(ICategoryService categoryService) => _categoryService = categoryService;
     
+    [HttpGet]
+    public IActionResult GetAllCategory()
+    {
+        var categoryList = _categoryService.GetAllCategory();
+        return Ok(categoryList);
+    }
+
 }

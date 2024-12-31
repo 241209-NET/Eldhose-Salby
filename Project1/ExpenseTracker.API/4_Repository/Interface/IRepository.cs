@@ -17,5 +17,5 @@ public interface IExpenseRepository
 
 public interface ICategoryRepository
 {
-    
+    IEnumerable<Category>GetAllCategory();
 }

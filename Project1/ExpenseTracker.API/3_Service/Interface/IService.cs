@@ -18,6 +18,6 @@ public interface IExpenseService
 
 public interface ICategoryService
 {
-
+    IEnumerable<Category>GetAllCategory();
 
 }
