@@ -1,3 +1,4 @@
+using ExpenseTracker.API.DTO;
 using ExpenseTracker.API.Model;
 using ExpenseTracker.API.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ public class ExpenseController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult CreateExpense(Expense newExpense)
+    public IActionResult CreateExpense(ExpenseInDTO newExpense)
     {
         var expense = _expenseService.CreateExpense(newExpense);
         return Ok(expense);

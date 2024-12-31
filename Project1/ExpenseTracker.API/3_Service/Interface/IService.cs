@@ -1,3 +1,4 @@
+using ExpenseTracker.API.DTO;
 using ExpenseTracker.API.Model;
 
 namespace ExpenseTracker.API.Service;
@@ -13,7 +14,7 @@ public interface IUserService
 public interface IExpenseService
 {
     IEnumerable<Expense>GetAllExpenses();
-    Expense CreateExpense(Expense newExpense);
+    Expense CreateExpense(ExpenseInDTO newExpense);
 }
 
 

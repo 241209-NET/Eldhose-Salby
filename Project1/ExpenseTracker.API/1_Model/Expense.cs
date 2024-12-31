@@ -10,8 +10,6 @@ public class Expense
     public int CategoryId { get; set;}
     public string? Description { get; set;}
 
-    [JsonIgnore]
     public User? User {get; set; }
-    [JsonIgnore]
     public Category? Category { get; set;}
 }

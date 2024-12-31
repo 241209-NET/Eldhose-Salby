@@ -1,5 +1,7 @@
+using ExpenseTracker.API.DTO;
 using ExpenseTracker.API.Model;
 using ExpenseTracker.API.Repository;
+using ExpenseTracker.API.Util;
 
 namespace ExpenseTracker.API.Service;
 
@@ -15,9 +17,12 @@ public class ExpenseService : IExpenseService
         return _expenseRepository.GetAllExpenses();
     }
     
-    public Expense CreateExpense(Expense newExpense)
+    public Expense CreateExpense(ExpenseInDTO newExpense)
     {
-        var expense = _expenseRepository.CreateExpense(newExpense);
+        Expense fromDTO = newExpense.DTOToExpense();
+        Expense fromDTO2 = Utilities.DTOToObject(newExpense);
+        
+        var expense = _expenseRepository.CreateExpense(fromDTO);
         return expense;
     }
 
