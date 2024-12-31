@@ -12,4 +12,12 @@ public class CategoryRepository : ICategoryRepository
     {
         return _expenseTrackerContext.Category.ToList();
     }
+
+     public Category CreateCategory(Category newCategory)
+    {
+        _expenseTrackerContext.Category.Add(newCategory);
+        _expenseTrackerContext.SaveChanges();
+        return newCategory;
+    }
+
 }

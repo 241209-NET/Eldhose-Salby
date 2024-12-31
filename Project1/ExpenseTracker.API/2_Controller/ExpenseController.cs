@@ -1,3 +1,4 @@
+using ExpenseTracker.API.Model;
 using ExpenseTracker.API.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,13 @@ public class ExpenseController : ControllerBase
     {
         var expenseList = _expenseService.GetAllExpenses();
         return Ok(expenseList);
+    }
+
+    [HttpPost]
+    public IActionResult CreateExpense(Expense newExpense)
+    {
+        var expense = _expenseService.CreateExpense(newExpense);
+        return Ok(expense);
     }
 
     

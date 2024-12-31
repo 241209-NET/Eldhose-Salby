@@ -13,9 +13,11 @@ public interface IUserRepository
 public interface IExpenseRepository
 {
     IEnumerable<Expense>GetAllExpenses();
+    Expense CreateExpense(Expense newExpense);
 }
 
 public interface ICategoryRepository
 {
     IEnumerable<Category>GetAllCategory();
+    Category CreateCategory(Category newCategory);
 }

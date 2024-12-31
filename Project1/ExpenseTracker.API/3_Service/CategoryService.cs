@@ -13,4 +13,9 @@ public class CategoryService : ICategoryService
         return _categoryRepository.GetAllCategory();
     }
     
+    public Category CreateCategory(Category newCategory)
+    {
+        var category = _categoryRepository.CreateCategory(newCategory);
+        return category;
+    }
 }

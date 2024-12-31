@@ -13,11 +13,13 @@ public interface IUserService
 public interface IExpenseService
 {
     IEnumerable<Expense>GetAllExpenses();
+    Expense CreateExpense(Expense newExpense);
 }
 
 
 public interface ICategoryService
 {
     IEnumerable<Category>GetAllCategory();
+    Category CreateCategory(Category newCategory);
 
 }

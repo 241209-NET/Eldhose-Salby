@@ -12,5 +12,6 @@ public class Expense
 
     [JsonIgnore]
     public User? User {get; set; }
+    [JsonIgnore]
     public Category? Category { get; set;}
 }

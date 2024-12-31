@@ -1,3 +1,4 @@
+using ExpenseTracker.API.Model;
 using ExpenseTracker.API.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,13 @@ public class CategoryController : ControllerBase
     {
         var categoryList = _categoryService.GetAllCategory();
         return Ok(categoryList);
+    }
+
+    [HttpPost]
+    public IActionResult CreateCategory(Category newCategory)
+    {
+        var category = _categoryService.CreateCategory(newCategory);
+        return Ok(category);
     }
 
 }
