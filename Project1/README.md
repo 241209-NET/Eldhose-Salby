@@ -33,9 +33,10 @@ Eldhose Salby
 
 ## User Stories
 - **As a user**, I want to be able to add a new expense so that I can track my spending.
+- **As a user**, I want to view all expenses and view by userId. 
 - **As a user**, I want to be able to view all of my expenses so that I can see a summary of my expenditures.
 - **As a user**, I want to be able to delete an expense when it was added by mistake.
-- **As a user**, I want my expenses to be stored in a secure database, so they are persistent across sessions.
+- **As a user**, I want to delete and add a category and also view all categories.
 - **As a user**, I want to be able to assign an expense to a category (e.g., Food, Transport) so that I can better organize and analyze my spending.
 
 ---
@@ -52,3 +53,9 @@ Eldhose Salby
 - Implement Category functionality, allowing users to assign expenses to categories and view them categorized.
 - Create unit tests for core functionality (add, view, delete expenses, and category assignment).
 - Use Swagger or similar tools for basic API documentation to make it easy for users to interact with the API.
+
+---
+## Stretch Goals
+- Provide detailed expense reports with charts and graphs.
+- Increase test coverage with unit and integration tests.
+- Build a frontend using React or a mobile app for better user access.
