@@ -21,4 +21,5 @@ public interface ICategoryRepository
 {
     IEnumerable<Category>GetAllCategory();
     Category CreateCategory(Category newCategory);
+    Category? DeleteCategoryById(int id);
 }

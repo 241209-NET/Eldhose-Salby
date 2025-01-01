@@ -20,4 +20,14 @@ public class CategoryRepository : ICategoryRepository
         return newCategory;
     }
 
+    public Category? DeleteCategoryById(int id)
+    {
+        var category = _expenseTrackerContext.Category.Find(id);
+        if(category == null) return null;
+
+        _expenseTrackerContext.Category.Remove(category);
+        _expenseTrackerContext.SaveChanges();
+        return category;
+    }
+
 }

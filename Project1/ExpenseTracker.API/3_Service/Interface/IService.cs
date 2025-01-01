@@ -23,5 +23,6 @@ public interface ICategoryService
 {
     IEnumerable<Category>GetAllCategory();
     Category CreateCategory(Category newCategory);
+    Category? DeleteCategoryById(int id);
 
 }

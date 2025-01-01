@@ -18,4 +18,10 @@ public class CategoryService : ICategoryService
         var category = _categoryRepository.CreateCategory(newCategory);
         return category;
     }
+
+    public Category? DeleteCategoryById(int id)
+    {
+        return _categoryRepository.DeleteCategoryById(id);
+
+    }
 }
