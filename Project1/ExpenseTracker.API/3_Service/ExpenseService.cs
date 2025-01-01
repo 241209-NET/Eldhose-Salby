@@ -10,8 +10,7 @@ namespace ExpenseTracker.API.Service;
 public class ExpenseService : IExpenseService
 {
     private readonly IExpenseRepository _expenseRepository;
-    private readonly IUserRepository _userRepository;
-    private readonly ICategoryRepository _categoryRepository;
+
     public ExpenseService(IExpenseRepository expenseRepository) => _expenseRepository = expenseRepository;
 
     public IEnumerable<Expense> GetAllExpenses()
