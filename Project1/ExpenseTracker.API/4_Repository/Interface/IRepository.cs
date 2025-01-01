@@ -13,7 +13,7 @@ public interface IUserRepository
 public interface IExpenseRepository
 {
     IEnumerable<Expense>GetAllExpenses();
-    Expense? GetExpenseById(int id);
+    IEnumerable<Expense> GetExpenseByUserId(int userId);
     Expense CreateExpense(Expense newExpense);
 }
 

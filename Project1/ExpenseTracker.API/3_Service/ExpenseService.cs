@@ -19,11 +19,9 @@ public class ExpenseService : IExpenseService
         return _expenseRepository.GetAllExpenses();
     }
 
-    public Expense? GetExpenseById(int id)
+    public IEnumerable<Expense> GetExpenseByUserId(int userId)
     {
-        var foundExpense = _expenseRepository.GetExpenseById(id);
-        if(foundExpense is null) throw new NoExpenseException("That expense does not exist");
-        return foundExpense;
+        return _expenseRepository.GetExpenseByUserId(userId);
     }
     
     public Expense CreateExpense(ExpenseInDTO newExpense)

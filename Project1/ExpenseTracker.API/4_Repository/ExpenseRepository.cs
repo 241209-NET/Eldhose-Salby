@@ -17,9 +17,13 @@ public class ExpenseRepository : IExpenseRepository
         .ToList();
     }
 
-    public Expense? GetExpenseById(int id)
+    public IEnumerable<Expense> GetExpenseByUserId(int userId)
     {
-        return _expenseTrackerContext.Expenses.Find(id);
+        return _expenseTrackerContext.Expenses
+        .Include(e => e.User)
+        .Include(e => e.Category)
+        .Where(e => e.UserId == userId)
+        .ToList();
     }
     
     public Expense CreateExpense(Expense newExpense)

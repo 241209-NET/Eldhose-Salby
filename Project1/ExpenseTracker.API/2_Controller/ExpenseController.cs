@@ -20,18 +20,15 @@ public class ExpenseController : ControllerBase
         return Ok(expenseList);
     }
 
-    [HttpGet("{id}")]
-    public IActionResult GetExpenseById(int id)
+    [HttpGet("{userId}")]
+    public IActionResult GetExpenseByUserId(int userId)
     {
-        try
+        var expenses = _expenseService.GetExpenseByUserId(userId); 
+        if (expenses == null || !expenses.Any())
         {
-            var foundExpense = _expenseService.GetExpenseById(id);
-            return Ok(foundExpense);
+            return NotFound($"No expenses found for UserId: {userId}");
         }
-        catch(Exception e)
-        {
-            return BadRequest(e.Message);
-        }
+        return Ok(expenses);
     }
 
     [HttpPost]
