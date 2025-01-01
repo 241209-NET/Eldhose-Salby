@@ -38,5 +38,16 @@ public class ExpenseController : ControllerBase
         return Ok(expense);
     }
 
+    [HttpDelete("{id}")]
+    public IActionResult DeleteExpenseById(int id)
+    {
+        var expense = _expenseService.DeleteExpenseById(id);
+        if(expense == null)
+        {
+            return NotFound($"Expense with Id {id} not found");
+        }
+        return Ok(expense);
+    }
+
     
 }

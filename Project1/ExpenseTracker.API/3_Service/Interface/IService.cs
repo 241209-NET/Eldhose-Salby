@@ -16,6 +16,7 @@ public interface IExpenseService
     IEnumerable<Expense>GetAllExpenses();
     IEnumerable<Expense> GetExpenseByUserId(int userId);
     Expense CreateExpense(ExpenseInDTO newExpense);
+    Expense? DeleteExpenseById(int id);
 }
 
 

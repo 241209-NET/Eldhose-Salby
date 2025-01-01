@@ -15,6 +15,7 @@ public interface IExpenseRepository
     IEnumerable<Expense>GetAllExpenses();
     IEnumerable<Expense> GetExpenseByUserId(int userId);
     Expense CreateExpense(Expense newExpense);
+    Expense? DeleteExpenseById(int id);
 }
 
 public interface ICategoryRepository

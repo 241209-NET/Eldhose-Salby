@@ -33,5 +33,10 @@ public class ExpenseService : IExpenseService
         return expense;
     }
 
+    public Expense? DeleteExpenseById(int id)
+    {
+        return _expenseRepository.DeleteExpenseById(id);
+    } 
+
     
 }

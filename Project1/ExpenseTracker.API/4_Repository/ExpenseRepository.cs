@@ -32,4 +32,14 @@ public class ExpenseRepository : IExpenseRepository
         _expenseTrackerContext.SaveChanges();
         return newExpense;
     }
+
+    public Expense? DeleteExpenseById(int id)
+    {
+        var expense = _expenseTrackerContext.Expenses.Find(id);
+        if(expense == null) return null;
+
+        _expenseTrackerContext.Expenses.Remove(expense);
+        _expenseTrackerContext.SaveChanges();
+        return expense;
+    }
 }
