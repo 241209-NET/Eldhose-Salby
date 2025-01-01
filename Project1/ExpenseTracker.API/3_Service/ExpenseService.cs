@@ -1,7 +1,9 @@
 using ExpenseTracker.API.DTO;
+using ExpenseTracker.API.ExpenseException;
 using ExpenseTracker.API.Model;
 using ExpenseTracker.API.Repository;
 using ExpenseTracker.API.Util;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ExpenseTracker.API.Service;
 
@@ -16,6 +18,13 @@ public class ExpenseService : IExpenseService
     {
         return _expenseRepository.GetAllExpenses();
     }
+
+    public Expense? GetExpenseById(int id)
+    {
+        var foundExpense = _expenseRepository.GetExpenseById(id);
+        if(foundExpense is null) throw new NoExpenseException("That expense does not exist");
+        return foundExpense;
+    }
     
     public Expense CreateExpense(ExpenseInDTO newExpense)
     {
@@ -26,4 +35,5 @@ public class ExpenseService : IExpenseService
         return expense;
     }
 
+    
 }

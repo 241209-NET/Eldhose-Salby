@@ -20,6 +20,20 @@ public class ExpenseController : ControllerBase
         return Ok(expenseList);
     }
 
+    [HttpGet("{id}")]
+    public IActionResult GetExpenseById(int id)
+    {
+        try
+        {
+            var foundExpense = _expenseService.GetExpenseById(id);
+            return Ok(foundExpense);
+        }
+        catch(Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
     [HttpPost]
     public IActionResult CreateExpense(ExpenseInDTO newExpense)
     {

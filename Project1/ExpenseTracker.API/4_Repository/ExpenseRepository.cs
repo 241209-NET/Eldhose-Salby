@@ -17,6 +17,11 @@ public class ExpenseRepository : IExpenseRepository
         .ToList();
     }
 
+    public Expense? GetExpenseById(int id)
+    {
+        return _expenseTrackerContext.Expenses.Find(id);
+    }
+    
     public Expense CreateExpense(Expense newExpense)
     {
         _expenseTrackerContext.Expenses.Add(newExpense);
